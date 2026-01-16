@@ -48,13 +48,18 @@ class mailbox:
         if response.status_code != 200:
             raise Exception(f"Failed to retrieve messages: {response.status_code}")
 
+    def get_content(message_id, self):
+        url = f'https://web2.temp-mail.org/messages/{message_id}'
+        headers = {
+            "authorization": f"Bearer {self.token}",
+        }
+
+        response = requests.get(url, headers=headers, impersonate=self.IMPERSONATE)
         data = response.json()
-        messages = data.get("messages")
-        return messages
+        return data
     
     def get_token(self) -> Optional[str]:
         return self.token
     
     def get_mailbox(self) -> Optional[str]:
         return self._mailbox
-
