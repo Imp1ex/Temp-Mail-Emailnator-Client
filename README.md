@@ -1,3 +1,4 @@
+# Temp Mail
 ```py
 from temp_mail_client import mailbox
 import time
@@ -22,3 +23,6 @@ if __name__ == "__main__":
 ```
 If you get a 429 error, consider using a proxy.
 I do not provide any additional fields or metadata for message data.
+
+# Emailnator
+https://github.com/Imp1ex/Temp-Mail-Client/blob/main/emailnator.py
